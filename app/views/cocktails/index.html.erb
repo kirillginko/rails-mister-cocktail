@@ -1,0 +1,20 @@
+  <div class= "text-center">
+  <h1>Cocktail List</h1>
+  <div class="container">
+  <div class="row  mx-md-n12">
+  <% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-m-3">
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    <p><%= link_to 'view details', cocktail_path(cocktail) %></p>
+    <p><%= link_to 'delete cocktail', cocktail_path(cocktail), method: :delete %></p>
+  </div>
+  <% end %>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<%= link_to 'create a new cocktail', new_cocktail_path  %>

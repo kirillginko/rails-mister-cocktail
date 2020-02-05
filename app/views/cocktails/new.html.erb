@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>create a new cocktail</h1>
+
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :ingredients, as: :check_boxes, collection: Ingredient.all %>
+    <%= f.submit "creating new cocktail" %>
+  <% end %>
+<button type='button' onclick="location.href='<%= cocktails_path %>';">Back to list</button>
+
+</div>
