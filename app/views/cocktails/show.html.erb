@@ -1,15 +1,27 @@
 <div class="container">
-<h1><%= @cocktail.name %></h1>
-
+  <div class="card-deck col-sm-6 ">
+    <div class="card text-left pl-5 pb-5 pt-5 mt-5">
+     <div class="card-block">
+<h1 class="card-title"><%= @cocktail.name %></h1>
+<p class="card-text">
 <% @doses.each do |dose| %>
-  <p class="description"><%= dose.description %> of <%= dose.ingredient.name %>
+  <div class="card-product-infos">
+  <p class=""><%= dose.description %> of <%= dose.ingredient.name %>
   <%= link_to 'destroy this dose', dose_path(dose), method: :delete %>
    </p>
 <% end %>
+</div>
+</p>
+</div>
+</div>
+</div>
+
+
 
 <button type='button' onclick="location.href='<%= new_cocktail_dose_path(@cocktail) %>';">add a new dose to cocktail</button>
-<button type='button' onclick="location.href='<%= cocktails_path %>';">Back to list</button>
 </div>
+<button type='button' onclick="location.href='<%= cocktails_path %>';">Back to list</button>
+
 
 
 
